@@ -16,7 +16,7 @@ const AboutUs = () => {
         {image: Olasumbo, name: 'Olasumbo Akinremi', description: 'Sales Manager'},
         {image: Safal, name: 'Safal Mahat', description: 'HR/ Secretary'}
     ];
-    
+
     return(
         <div className="container">
             <div className="aboutUs">
