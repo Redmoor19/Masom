@@ -5,12 +5,13 @@ import Danila from '../../resources/Danila.jpg';
 import Iksu from '../../resources/Iksu.jpg';
 import Olasumbo from '../../resources/Olasumbo.jpg';
 import Safal from '../../resources/Safal.png';
+import Liza from '../../resources/Liza.png';
  
 const AboutUs = () => {
     const staff = [
         {image: Anthony, name: 'Anthony Owala', description: 'CEO/ Finance Director'},
         {image: Danila, name: 'Danila Mandrabura', description: 'Product Manager/ IT Specialist'},
-        {image: Anthony, name: 'Elizaveta Sabanova', description: 'Marketing Manager'},
+        {image: Liza, name: 'Elizaveta Sabanova', description: 'Marketing Manager'},
         {image: Iksu, name: 'Iksu Stepanova', description: 'Visualist/ Secretary'},
         {image: Olasumbo, name: 'Olasumbo Akinremi', description: 'Sales Manager'},
         {image: Safal, name: 'Safal Mahat', description: 'HR/ Secretary'}
