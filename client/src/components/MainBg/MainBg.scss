@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.background {
+    background: url('../../resources/main_bg1.png') center center/cover no-repeat;
+    height: auto;
+    z-index: -1;
+    padding: 80px 0 60px 0;
+    &__title {
+        text-align: center;
+        font-size: 60px;
+        color: #fff;
+        font-weight: 800;
+    }
+    &__subtitle {
+        text-align: center;
+        font-weight: 400;
+        margin-top: 20px;
+        color: #fff;
+    }
+    &__descr {
+        text-align: center;
+        color: #fff;
+        margin-top: 40px;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 50px;
+    }
+    &__button{
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        text-align: center;
+        border: 1px solid #ffff;
+        border-radius: 5px;
+        width: 200px;
+        height: 60px;
+        color: #ffff;
+        font-size: 25px;
+        background: none;
+        z-index: 10;
+    }
+}

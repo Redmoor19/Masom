@@ -1,0 +1,9 @@
+.smallBg {
+    background: url('../../resources/main_bg1.png') center/cover no-repeat;
+    background-position: 50% 65%;
+    height: 150px;
+    padding-top: 20px;
+    &__title {
+        color: white;
+    }
+}
