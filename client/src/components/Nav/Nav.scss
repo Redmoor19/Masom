@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+
+.navigation {
+    display: flex;
+    background-color: $main_color;
+    color: #d0fff6;
+    align-items: center;
+    gap: 30px;
+    padding: 5px 0px;
+    z-index: 1;
+    &__logo {
+        width: 150px;
+        margin-left: 200px;
+    }
+    &__item {
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+.nav_hover{
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        background-color: #d0fff6;
+        height: 3px;
+        width: 0px;
+        left: 0px;
+        top: 33px;
+        transition: all 0.5s;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+            transition: all 0.5s;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.active {
+    font-weight: 800;
+    &:after {
+        width: 100%;
+    }
+}
