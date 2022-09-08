@@ -3,7 +3,7 @@ import DetergentIcon from '../../resources/icons/detergentIcon/detergent';
 
 const MainBg = () => {
     return(
-        <div className='background'>
+        <section className='background'>
             <div className="container">
                 <h1 className='background__title'>MASOM NY</h1>
                 <h2 className='background__subtitle'>Trusted products</h2>
@@ -11,7 +11,7 @@ const MainBg = () => {
                 <p className='background__descr'>Cleaning substances for your business. <br /> Want to try our product?</p>
                 <button className='background__button'>More</button>
             </div>
-        </div>
+        </section>
     )
 }
 

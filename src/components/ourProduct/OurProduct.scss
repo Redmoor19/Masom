@@ -1,0 +1,23 @@
+.ourProduct {
+    background-color: #e6e6e6;
+    padding: 40px 0 40px 0;
+    &__grid {
+        display: grid;
+        grid-template: auto auto / 3fr 2fr;
+        margin-top: 20px;
+        gap: 20px;
+    }
+    &__img {
+        display: block;
+        max-height: 550px;
+        margin: 0 auto;
+        grid-row-start: 2;
+    }
+    &__eco-label {
+        margin-left: 22%;
+    }
+    &__descr {
+        grid-row-start: 2;
+        width: 100%;
+    }
+}

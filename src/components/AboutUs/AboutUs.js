@@ -1,4 +1,6 @@
 import './aboutUs.scss';
+import 'animate.css/animate.min.css';
+
 import DetergentIcon from '../../resources/icons/detergentIcon/detergent';
 import Anthony from '../../resources/Anthony.jpg';
 import Danila from '../../resources/Danila.jpg';
@@ -6,6 +8,8 @@ import Iksu from '../../resources/Iksu.jpg';
 import Olasumbo from '../../resources/Olasumbo.jpg';
 import Safal from '../../resources/Safal.png';
 import Liza from '../../resources/Liza.png';
+
+import { AnimationOnScroll } from 'react-animation-on-scroll';
  
 const AboutUs = () => {
     const staff = [
@@ -19,14 +23,17 @@ const AboutUs = () => {
 
     return(
         <div className="container">
-            <div className="aboutUs">
-                <h2 className="aboutUs__title">About us</h2>
+            <section className="aboutUs">
+                <h2 className="title">About us</h2>
                 <DetergentIcon color='black'/>
-                <p className='aboutUs__descr'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae temporibus molestiae, necessitatibus neque voluptatibus nisi debitis doloremque rerum eum, quaerat inventore voluptatem odit, fugit commodi odio sequi dolore? Itaque, expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo rerum quidem cupiditate ad architecto illum iure. Quidem eligendi non quisquam enim, voluptatem quos architecto. Eligendi quae saepe odio voluptate et.</p>
+                <p className='descr'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae temporibus molestiae, necessitatibus neque voluptatibus nisi debitis doloremque rerum eum, quaerat inventore voluptatem odit, fugit commodi odio sequi dolore? Itaque, expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo rerum quidem cupiditate ad architecto illum iure. Quidem eligendi non quisquam enim, voluptatem quos architecto. Eligendi quae saepe odio voluptate et.</p>
                 <div className="aboutUs__wrapper">
-                    {staff.map( item => <Portfolio key={item.name} image={item.image} name={item.name} description={item.description}/>)}
+                    {staff.map( item => 
+                    <AnimationOnScroll animateIn='animate__bounceIn' delay='100'> 
+                        <Portfolio key={item.name} image={item.image} name={item.name} description={item.description}/>
+                    </AnimationOnScroll>)}
                 </div>
-            </div>
+            </section>
         </div>
     )
 }
@@ -34,9 +41,13 @@ const AboutUs = () => {
 const Portfolio = ({image, name, description}) => {
     return(
         <div className='portfolio'>
-            <img src={image} alt={name} className="portfolio__image" />
-            <p className="portfolio__name">{name}</p>
-            <p className="portfolio__description">{description}</p>
+            <div className="portfolio__wrapper">
+                <img src={image} alt={name} className="portfolio__image" />
+                <p className="portfolio__name">{name}</p>
+            </div>
+            <div className="portfolio__description">
+                <p >{description}</p>
+            </div>
         </div>
     )
 }

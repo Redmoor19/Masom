@@ -1,16 +1,6 @@
 .aboutUs {
-    padding: 60px 0 50px 0;
+    padding: 40px 0 40px 0;
     background: url('../../resources/leaves.webp') repeat;
-    &__title {
-        text-align: center;
-        font-size: 30px;
-    }
-    &__descr {
-        margin: 0 auto;
-        margin-top: 45px;
-        width: 70%;
-        text-align: center;
-    }
     &__wrapper {
         padding-top: 40px;
         width: 70%;
@@ -24,15 +14,17 @@
 
 .portfolio {
     width: 200px;
-    height: 300px;
+    height: auto;
     background-color: rgb(205, 226, 202);
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__image {
         height: 190px;
         max-width: 150px;
         display: block;
         margin: 0 auto;
-        margin-top: 20px;
         object-fit: contain;
         background-color: #ffff;
     }
@@ -43,6 +35,14 @@
     }
     &__description {
         text-align: center;
-        margin-top: 10px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__wrapper {
+        background-color: #2f6d1646;
+        padding: 20px 0 10px 0;
+        border-radius: 5px;
     }
 }
