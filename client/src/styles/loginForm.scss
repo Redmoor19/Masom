@@ -1,0 +1,44 @@
+@import './variables.scss';
+
+.loginForm {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30vh;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px 30px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__label {
+        font-size: 20px;
+    }
+    &__input {
+        height: 30px;
+    }
+    &__button {
+        height: 50px;
+        width: 140px;
+        display: block;
+        margin: auto 0px auto auto;
+        background-color: $main_color;
+        border: 1px solid grey;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+}
+
+.error{
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 42%;
+    color: red;
+}
