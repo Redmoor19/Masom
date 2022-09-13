@@ -26,3 +26,13 @@
     font-size: 20px;
     line-height: 30px;
 }
+.button{
+    height: 50px;
+    width: 140px;
+    display: block;
+    margin: auto 0px auto auto;
+    background-color: $main_color;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 20px;
+}

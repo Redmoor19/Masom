@@ -79,7 +79,7 @@ const Login = () => {
                         {errors.password && touched.password && errors.password}
                     </div>
                     <button 
-                    className="loginForm__button"
+                    className="button"
                     type="submit"
                     >
                         Submit
