@@ -1,0 +1,51 @@
+.card {
+    width: 300px;
+    height: 350px;
+    border: 1px solid grey;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    &__img {
+        display: block;
+        max-width: 298px;
+        border-radius: 20px 20px 0 0;
+    }
+    &__body{
+        padding: 25px 30px 5px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 120px;
+    }
+    &__title {
+        font-size: 20px;
+    }
+    &__price {
+        display: block;
+        text-align: right;
+        font-size: 25px;
+        font-weight: 800;
+    }
+}
+
+.cross {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    &:before, &:after{
+        position: absolute;
+        content: '';
+        height: 5px;
+        width: 40px;
+        background-color: red;
+        transform: rotate(45deg);
+        top: 13px;
+        left: -5px;
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+}

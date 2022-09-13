@@ -5,13 +5,48 @@ const User = require('../schemas/UserSchema.js');
 const {generateToken, authenticateToken} = require('../middleware/auth.js');
 
 router.post('/authUser', async (req, res) => {
-    const isAdmin = await User.findOne({role: req.body.name});
-    if (isAdmin && isAdmin.password == req.body.password) {
-        const token = generateToken({username: req.body.name});
-        res.status(200).json(token);
-    } else {
-        res.status(400).json('You are not an admin');
+    try {
+        const isAdmin = await User.findOne({role: req.body.name});
+        if (isAdmin && isAdmin.password == req.body.password) {
+            const token = generateToken({username: req.body.name});
+            res.status(200).json(token);
+        } else {
+            res.status(401).json('You are not an admin');
+        }
+    } catch (error) {
+        res.status(404).json({message: error.message});
     }
 });
+
+router.get('/products', async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.status(200).json(products);
+    } catch (error){
+        res.status(404).json({message: error.message});
+    }
+})
+
+router.post('/createProduct', authenticateToken, async (req, res) => {
+    const product = new Product(req.body);
+
+    try {
+        console.log(product);
+        await product.save();
+        res.status(200).json(product);
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({message: error.message});
+    }
+})
+
+router.delete('/deleteProduct', async (req, res) => {
+    try {
+        await Product.deleteOne({_id: req.body._id});
+        res.status(200).json('Item deleted');
+    } catch (error) {
+        res.status(400).json({message: error.message});
+    }
+})
 
 module.exports = router;
