@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../schemas/ProductSchema.js');
 const User = require('../schemas/UserSchema.js');
+const Order = require('../schemas/OrederSchema.js');
 const {generateToken, authenticateToken} = require('../middleware/auth.js');
 
 router.post('/authUser', async (req, res) => {
@@ -25,25 +26,34 @@ router.get('/products', async (req, res) => {
     } catch (error){
         res.status(404).json({message: error.message});
     }
-})
+});
 
 router.post('/createProduct', authenticateToken, async (req, res) => {
     const product = new Product(req.body);
 
     try {
-        console.log(product);
         await product.save();
         res.status(200).json(product);
     } catch (error) {
-        console.log(error);
         res.status(400).json({message: error.message});
     }
-})
+});
 
 router.delete('/deleteProduct', async (req, res) => {
     try {
         await Product.deleteOne({_id: req.body._id});
         res.status(200).json('Item deleted');
+    } catch (error) {
+        res.status(400).json({message: error.message});
+    }
+});
+
+router.post('/createOrder', async (req, res) => {
+    const order = new Order(req.body);
+
+    try {
+        await order.save();
+        res.status(200).json(order);
     } catch (error) {
         res.status(400).json({message: error.message});
     }

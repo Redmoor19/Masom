@@ -31,7 +31,13 @@ const useApi = () => {
         return res;
     }
 
-    return {error, loading, getProducts, createProduct, deleteProduct, cleanError, login}
+    const createOrder = async (order) => {
+        const body = JSON.stringify(order);
+        const res = await request(`${url}/createOrder`, 'POST', body)
+        return res;
+    }
+
+    return {error, loading, getProducts, createProduct, deleteProduct, cleanError, createOrder, login}
 }
 
 export {useApi};

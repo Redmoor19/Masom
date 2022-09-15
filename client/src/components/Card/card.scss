@@ -5,17 +5,21 @@
     margin: 0 auto;
     border-radius: 20px;
     position: relative;
+    background-color: #fff;
     &__img {
         display: block;
         max-width: 298px;
         border-radius: 20px 20px 0 0;
     }
     &__body{
-        padding: 25px 30px 5px 15px;
+        padding: 25px 10px 5px 15px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 120px;
+    }
+    &__header {
+        cursor: pointer;
     }
     &__title {
         font-size: 20px;
@@ -25,6 +29,12 @@
         text-align: right;
         font-size: 25px;
         font-weight: 800;
+    }
+    &__text {
+        height: 223px;
+        padding: 5px;
+        background-color: #f2f2f2;
+        border-radius: 20px 20px 0 0;
     }
 }
 
@@ -48,4 +58,8 @@
     &:after {
         transform: rotate(-45deg);
     }
+}
+
+.invisible {
+    display: none;
 }
