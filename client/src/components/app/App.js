@@ -2,6 +2,7 @@ import '../../styles/App.scss'
 import { MainPage, Products, Admin, Login } from '../pages';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import RouteGuard from '../RouteGuard';
+import Footer from '../footer/Footer';
 
 import {history} from '../../helpers/history.js';
 
@@ -18,6 +19,7 @@ function App() {
           </Route>
           <Route path='/login' element={<Login />}/>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

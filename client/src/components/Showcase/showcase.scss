@@ -1,0 +1,7 @@
+.showcase {
+    padding-top: 30px;
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr;
+    row-gap: 20px;
+    grid-auto-flow: row;
+}

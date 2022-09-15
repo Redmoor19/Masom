@@ -3,14 +3,15 @@ import facebook from '../../resources/icons/facebook.png';
 import instagram from '../../resources/icons/instagram.png';
 import twitter from '../../resources/icons/twitter.png';
 import youtube from '../../resources/icons/youtube.png';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return(
         <footer className='footer'>
             <div className="container">
                 <div className="footer__mininav">
-                    <div className="footer__mininav-item">Main</div>
-                    <div className="footer__mininav-item">Products</div>
+                    <NavLink to='/'><div className="footer__mininav-item">Main</div></NavLink>
+                    <NavLink to='/products'><div className="footer__mininav-item">Products</div></NavLink>
                     <div className="footer__mininav-item">Contacts</div>
                 </div>
                 <div className="divider"></div>

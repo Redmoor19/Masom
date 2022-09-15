@@ -1,6 +1,7 @@
 import Nav from "../Nav/Nav";
 import SmallBG from "../SmallBg/SmallBg";
 import Showcase from "../Showcase/Showcase.js";
+import OrderForm from "../OrderForm/OrderForm";
 
 const Products = () => {
     return(
@@ -8,6 +9,8 @@ const Products = () => {
             <Nav />
             <SmallBG title='Our products'/>
             <Showcase />
+            <OrderForm />
+
         </>
     )
 }
