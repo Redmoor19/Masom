@@ -3,7 +3,7 @@
 .loginForm {
     display: block;
     margin: 0 auto;
-    margin-top: 30vh;
+    margin-top: 20vh;
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
     border: 1px solid black;
     border-radius: 5px;
     padding: 20px 30px;
-
+    margin-bottom: 90px;
     &__item {
         display: flex;
         flex-direction: column;

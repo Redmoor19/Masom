@@ -37,7 +37,22 @@ const useApi = () => {
         return res;
     }
 
-    return {error, loading, getProducts, createProduct, deleteProduct, cleanError, createOrder, login}
+    const getOrders = async () => {
+        const res = request(`${url}/getOrders`, 'GET', null, 
+        {'Content-type':'application/json',
+            'Authorization':`Brearer ${JSON.parse(localStorage.getItem('token'))}`});
+        return res;
+    }
+
+    const deleteOrder = async (id) => {
+        const body = JSON.stringify({_id: id});
+        const res = request(`${url}/deleteOrder`, 'DELETE', body,
+        {'Content-type':'application/json',
+        'Authorization':`Brearer ${JSON.parse(localStorage.getItem('token'))}`});
+        return res;
+    }
+
+    return {error, loading, getProducts, createProduct, deleteProduct, cleanError, createOrder, getOrders, deleteOrder, login}
 }
 
 export {useApi};
