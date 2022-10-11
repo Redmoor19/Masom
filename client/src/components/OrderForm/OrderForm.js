@@ -84,7 +84,7 @@ const OrderForm = () => {
                 </div>
                 <div className="orderForm__footer">
                     <p className="total">
-                        Total to pay: {(order.dishWasher*22.7 + order.floorCleaner*7.5 + order.disinfectant*20.1 + order.glassCleaner*32.1).toFixed(2)}€
+                        Total to pay without delivery: {(order.dishWasher*22.7 + order.floorCleaner*7.5 + order.disinfectant*20.1 + order.glassCleaner*32.1).toFixed(2)}€
                     </p>
                     <button className='button orderForm__btn'>Order</button>
                 </div>

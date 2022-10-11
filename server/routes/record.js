@@ -39,7 +39,7 @@ router.post('/createProduct', authenticateToken, async (req, res) => {
     }
 });
 
-router.delete('/deleteProduct', async (req, res) => {
+router.delete('/deleteProduct', authenticateToken, async (req, res) => {
     try {
         await Product.deleteOne({_id: req.body._id});
         res.status(200).json('Item deleted');
@@ -54,6 +54,24 @@ router.post('/createOrder', async (req, res) => {
     try {
         await order.save();
         res.status(200).json(order);
+    } catch (error) {
+        res.status(400).json({message: error.message});
+    }
+})
+
+router.get('/getOrders', authenticateToken, async (req, res) => {
+    try {
+        const orders = await Order.find();
+        res.status(200).json(orders);
+    } catch (error) {
+        res.statrus(400).json({message: error.message});
+    }
+});
+
+router.delete('/deleteOrder', authenticateToken, async (req, res) => {
+    try {
+        await Order.deleteOne({_id: req.body.id});
+        res.status(200).json('Item deleted');
     } catch (error) {
         res.status(400).json({message: error.message});
     }

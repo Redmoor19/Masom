@@ -7,9 +7,10 @@ import Card from '../Card/Card';
 import Spinner from '../Spinner/Spinner.js';
 
 const Admin = () => {
-    const { loading, getProducts, createProduct, deleteProduct} = useApi();
+    const { loading, getProducts, createProduct, deleteProduct, getOrders} = useApi();
     const [product, setProduct] = useState({title: '', price: '', description: '', image: ''});
     const [data, setData] = useState([]);
+    const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
 
     const onChangeHandler = (e) => {
@@ -46,6 +47,8 @@ const Admin = () => {
     useEffect( () => {
         getProducts()
             .then(array => setData(array));
+        getOrders()
+            .then(array => setOrders(array));
         //eslint-disable-next-line
     },[])
 
